@@ -376,8 +376,197 @@
   footer .socials a{color:var(--text-secondary);font-size:13px;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s}
   footer .socials a:hover{color:var(--accent-2)}
   footer p{font-family:'JetBrains Mono',monospace;font-size:11px}
+  /* ═══════════════════════════════════
+   DRIPCHECK
+═══════════════════════════════════ */
+
+.dripcheck{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top right, rgba(253,121,168,0.08), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(0,206,201,0.08), transparent 35%);
+}
+
+.dripcheck-hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr 0.8fr;
+  gap:28px;
+  margin-top:40px;
+  margin-bottom:50px;
+}
+
+@media(max-width:900px){
+  .dripcheck-hero-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.dripcheck-main-card{
+  background:linear-gradient(
+    160deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.02) 100%
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
+  padding:36px;
+  position:relative;
+  overflow:hidden;
+  backdrop-filter:blur(20px);
+}
+
+.dripcheck-main-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(108,92,231,0.08),
+      rgba(0,206,201,0.05),
+      rgba(253,121,168,0.08)
+    );
+  pointer-events:none;
+}
+
+.dripcheck-main-card h3{
+  font-size:34px;
+  line-height:1.1;
+  margin-bottom:18px;
+  letter-spacing:-1px;
+}
+
+.dripcheck-main-card p{
+  color:var(--text-secondary);
+  line-height:1.8;
+  margin-bottom:28px;
+  max-width:700px;
+}
+
+.dripcheck-features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:36px;
+}
+
+@media(max-width:768px){
+  .dripcheck-features{
+    grid-template-columns:1fr;
+  }
+}
+
+.dc-feature{
+  padding:16px 18px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  font-size:14px;
+  color:var(--text-primary);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  transition:var(--transition);
+}
+
+.dc-feature span{
+  color:var(--accent-2);
+  font-size:16px;
+}
+
+.dc-feature:hover{
+  transform:translateY(-4px);
+  border-color:rgba(0,206,201,0.3);
+  box-shadow:var(--glow-cyan);
+}
+
+.dripcheck-stats-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.dc-stat-card{
+  background:var(--bg-card);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:28px 22px;
+  backdrop-filter:blur(14px);
+  transition:var(--transition);
+}
+
+.dc-stat-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(108,92,231,0.3);
+  box-shadow:var(--glow-purple);
+}
+
+.dc-stat-label{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--text-secondary);
+  margin-bottom:12px;
+  font-family:'JetBrains Mono',monospace;
+}
+
+.dc-stat-value{
+  font-size:24px;
+  font-weight:700;
+  line-height:1.2;
+  background:linear-gradient(
+    135deg,
+    var(--accent-1),
+    var(--accent-2)
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.dripcheck-details-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:20px;
+}
+
+@media(max-width:900px){
+  .dripcheck-details-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.dc-info-card{
+  padding:30px;
+  border-radius:22px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  transition:var(--transition);
+  backdrop-filter:blur(12px);
+}
+
+.dc-info-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(253,121,168,0.25);
+  box-shadow:var(--glow-pink);
+}
+
+.dc-info-card h4{
+  font-size:24px;
+  margin-bottom:14px;
+  letter-spacing:-1px;
+}
+
+.dc-info-card p{
+  color:var(--text-secondary);
+  line-height:1.8;
+  font-size:14px;
+}
 </style>
-<meta name="description" content="Syed Wasif Raza — Software Engineer turned Product Thinker. 3 products shipped, 9+ PM case studies, 100+ users surveyed.">
+<meta name="description" content="Syed Wasif Raza — Software Engineer turned Product Thinker. 4 products shipped, 10+ PM case studies, 100+ users surveyed.">
 <meta property="og:title" content="Syed Wasif Raza — Engineer → Product Thinker">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -404,6 +593,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#journey" data-hover>Journey</a></li>
+    <li><a href="#dripcheck">DripCheck</a></li>
     <li><a href="#casestudies" data-hover>Case Studies</a></li>
     <li><a href="#products" data-hover>Products</a></li>
     <li><a href="#skills" data-hover>Skills</a></li>
@@ -411,6 +601,9 @@
   </ul>
   <div class="nav-right">
     <a href="https://linkedin.com/in/syedwasifraza31" target="_blank" class="nav-linkedin" data-hover>↗ LinkedIn</a>
+    <a href="https://trydripcheck.com" target="_blank" class="nav-linkedin">
+       Try DripCheck
+    </a>
     <a href="mailto:nwasif.official31@gmail.com" class="nav-cta" data-hover><span>Hire Me ↗</span></a>
   </div>
 </nav>
@@ -428,11 +621,11 @@
           <span class="gradient">Product Thinker</span>
         </h1>
         <p class="hero-subtitle">
-          I'm <strong>Syed Wasif Raza</strong> — bridging <strong>code</strong> and <strong>customer value</strong>. 2 yrs Accenture (SWE → promoted Product Analyst) · 10+ PM case studies · 3 products shipped · 100+ users surveyed. I build with <span class="typewriter" id="typewriter"></span>
+          I'm <strong>Syed Wasif Raza</strong> — bridging <strong>code</strong> and <strong>customer value</strong>. 2 yrs Accenture (SWE → promoted Product Analyst) · 10+ PM case studies · 4 products shipped · 100+ users surveyed. I build with <span class="typewriter" id="typewriter"></span>
         </p>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="num">9+</div><div class="lbl">Case Studies</div></div>
-          <div class="hero-stat"><div class="num">3</div><div class="lbl">Shipped Products</div></div>
+          <div class="hero-stat"><div class="num">10+</div><div class="lbl">Case Studies</div></div>
+          <div class="hero-stat"><div class="num">4</div><div class="lbl">Shipped Products</div></div>
           <div class="hero-stat"><div class="num">100+</div><div class="lbl">Users Surveyed</div></div>
           <div class="hero-stat"><div class="num">2yr</div><div class="lbl">Accenture</div></div>
         </div>
@@ -542,6 +735,166 @@
       </div>
     </div>
   </section>
+
+<!-- ═══════════════════════════════════
+     DRIPCHECK SECTION
+═══════════════════════════════════ -->
+<section class="dripcheck" id="dripcheck">
+  <div class="work-section">
+
+    <div class="section-label" data-animate>
+      Featured Product
+    </div>
+
+    <h2 class="section-title" data-animate>
+      <span class="gradient">DripCheck</span>
+    </h2>
+
+    <p class="section-subtitle" data-animate>
+      AI-powered outfit rating app helping Gen Z eliminate fashion paralysis and closet anxiety.
+      Upload clothes → AI auto-tags everything → get brutally honest outfit ratings instantly.
+    </p>
+
+    <!-- HERO GRID -->
+    <div class="dripcheck-hero-grid" data-animate>
+
+      <!-- LEFT -->
+      <div class="dripcheck-main-card">
+
+        <div class="folder-tag ft-pink">
+          LIVE PRODUCT
+        </div>
+
+        <h3>
+          Built & launched solo in weeks.
+        </h3>
+
+        <p>
+          DripCheck combines AI vision, instant outfit analysis, and behavioral product thinking
+          into a frictionless mobile experience users actually return to daily.
+        </p>
+
+        <div class="dripcheck-features">
+
+          <div class="dc-feature">
+            <span>✦</span>
+            AI auto-tags clothes from uploads
+          </div>
+
+          <div class="dc-feature">
+            <span>✦</span>
+            Brutally honest outfit ratings
+          </div>
+
+          <div class="dc-feature">
+            <span>✦</span>
+            Smart outfit combinations from closet
+          </div>
+
+          <div class="dc-feature">
+            <span>✦</span>
+            Instant clarity with zero friction UX
+          </div>
+
+        </div>
+
+        <div class="hero-ctas">
+
+          <a href="https://trydripcheck.com" target="_blank" class="btn-primary">
+            Try DripCheck
+          </a>
+
+          <a href="#dripcheck-details" class="btn-secondary">
+            View Project Details
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT STATS -->
+      <div class="dripcheck-stats-grid">
+
+        <div class="dc-stat-card">
+          <div class="dc-stat-label">Status</div>
+          <div class="dc-stat-value">Live</div>
+        </div>
+
+        <div class="dc-stat-card">
+          <div class="dc-stat-label">Solo Built</div>
+          <div class="dc-stat-value">Weeks</div>
+        </div>
+
+        <div class="dc-stat-card">
+          <div class="dc-stat-label">Tech</div>
+          <div class="dc-stat-value">React Native</div>
+        </div>
+
+        <div class="dc-stat-card">
+          <div class="dc-stat-label">AI</div>
+          <div class="dc-stat-value">Gemini API</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- INFO CARDS -->
+    <div class="dripcheck-details-grid" id="dripcheck-details">
+
+      <div class="dc-info-card" data-animate>
+        <div class="folder-tag ft-purple">Problem Identified</div>
+
+        <h4>Fashion Decision Fatigue</h4>
+
+        <p>
+          Most users spend 20+ minutes daily deciding what to wear.
+          Existing fashion apps create more friction instead of reducing it.
+          The insight: users don’t want inspiration boards — they want instant clarity.
+        </p>
+      </div>
+
+      <div class="dc-info-card" data-animate>
+        <div class="folder-tag ft-cyan">What Users Love</div>
+
+        <h4>Brutal Honesty</h4>
+
+        <p>
+          Users consistently mention two things:
+          no fake compliments and zero manual effort.
+          The AI gives direct outfit scores while automatically organizing their closet.
+        </p>
+      </div>
+
+      <div class="dc-info-card" data-animate>
+        <div class="folder-tag ft-pink">Tech Stack</div>
+
+        <h4>Mobile + AI Infrastructure</h4>
+
+        <p>
+          Built using React Native for cross-platform delivery,
+          Google Gemini API for outfit intelligence,
+          and Supabase for authentication, storage, database,
+          and edge function orchestration.
+        </p>
+      </div>
+
+      <div class="dc-info-card" data-animate>
+        <div class="folder-tag ft-yellow">What's Next</div>
+
+        <h4>V2 In Progress</h4>
+
+        <p>
+          Improving AI intelligence, personalized recommendations,
+          premium monetization features, and deeper wardrobe insights.
+          Early users are already requesting paid-tier functionality.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- CASE STUDIES -->
   <section id="casestudies" style="background:var(--bg-secondary);">
@@ -928,13 +1281,13 @@
     <div class="section-label" data-animate>// Impact Numbers</div>
     <h2 class="section-title" data-animate>By The<br><span class="gradient">Numbers</span></h2>
     <div class="metrics-grid">
-      <div class="metric-card" data-animate><div class="metric-number" data-count="3">0</div><div class="metric-label">Products Shipped</div></div>
-      <div class="metric-card" data-animate><div class="metric-number" data-count="9">0</div><div class="metric-label">PM Case Studies</div></div>
+      <div class="metric-card" data-animate><div class="metric-number" data-count="4">0</div><div class="metric-label">Products Shipped</div></div>
+      <div class="metric-card" data-animate><div class="metric-number" data-count="10">0</div><div class="metric-label">PM Case Studies</div></div>
       <div class="metric-card" data-animate><div class="metric-number" data-count="100">0</div><div class="metric-label">Users Surveyed</div></div>
       <div class="metric-card" data-animate><div class="metric-number" data-count="5">0</div><div class="metric-label">Enterprise Clients</div></div>
-      <div class="metric-card" data-animate><div class="metric-number" data-count="2">0</div><div class="metric-label">Years at Accenture</div></div>
+      <div class="metric-card" data-animate><div class="metric-number" data-count="2+">0</div><div class="metric-label">Years at Accenture</div></div>
       <div class="metric-card" data-animate><div class="metric-number" data-count="15">0</div><div class="metric-label">Frameworks Applied</div></div>
-      <div class="metric-card" data-animate><div class="metric-number" data-count="2">0</div><div class="metric-label">Full Teardowns</div></div>
+      <div class="metric-card" data-animate><div class="metric-number" data-count="2+">0</div><div class="metric-label">Full Teardowns</div></div>
       <div class="metric-card" data-animate><div class="metric-number" data-count="1">0</div><div class="metric-label">Wedding Launch 💒</div></div>
     </div>
   </section>
@@ -959,8 +1312,9 @@
   <div class="socials">
     <a href="https://linkedin.com/in/syedwasifraza31" target="_blank" data-hover>LinkedIn</a>
     <a href="mailto:nwasif.official31@gmail.com" data-hover>Email</a>
-    <a href="https://clickapic.lovable.app" target="_blank" data-hover>ClickaPic</a>
-    <a href="https://learnloop-1.lovable.app" target="_blank" data-hover>LearnLoop</a>
+      <a href="https://trydripcheck.com" target="_blank">
+    DripCheck
+  </a>
   </div>
   <p>Designed & Built with 💜 by Syed Wasif Raza | © 2025</p>
 </footer>
